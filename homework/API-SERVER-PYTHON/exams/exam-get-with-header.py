@@ -6,7 +6,7 @@ url = "https://jsonplaceholder.typicode.com/posts/1"
 # 요청 헤더 정의 (dict 형태)
 headers = {
     # 내가 보내는 데이터 타입이 JSON이라는 뜻
-    "Content-Type": "application/json",
+    "Content-Type": "application/json", 
 }
 
 # GET 요청 + headers 함께 전달
