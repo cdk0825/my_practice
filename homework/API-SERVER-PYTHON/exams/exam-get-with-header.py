@@ -17,3 +17,4 @@ print(response.status_code)  # 정상: 200
 
 # 응답 데이터 출력
 print(response.json())
+ 
