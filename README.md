@@ -1,3 +1,4 @@
+<!--
 코딩 연습과정을 입력함.
 allure, pytest, grahpQL, CLI 등 진행한 수업의 연습 내용을 정리한 프로젝트이다.
 
@@ -46,3 +47,4 @@ allure, pytest, grahpQL, CLI 등 진행한 수업의 연습 내용을 정리한 
 ├── Notebooks/           # 데이터 분석 및 전처리 주피터 노트북
 ├── Scripts/             # 크롤링 및 추천 엔진 스크립트
 └── README.md            # 프로젝트 소개
+-->
