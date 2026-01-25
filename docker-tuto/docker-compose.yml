@@ -1,0 +1,33 @@
+version: '3.9'
+
+# 띄울 컨테이너들 목록
+services:
+  api:
+    # 현재 폴더의 Dockerfile로
+    build: .
+    container_name: flask-api
+    # Flask API 이미지 만들고 실행
+    # 포트맵핑. 내 컴퓨터 5000 ↔ 도커 API 5000
+    ports:
+      - '5444:5555'
+    # 도커 재시작/에러 시 자동 재기동
+    restart: unless-stopped
+
+  jenkins-pika:
+    # Jenkins 공식 안정판 이미지
+    # 우리에게 젠킨스 이미지를 만들 수 있는 도커파일이 없으므로
+    # 이미지 이름을 통해 젠킨스 이미지를 불러옴
+    image: jenkins/jenkins:lts
+    container_name: jenkins-pika
+    ports:
+      - '8084:8080'
+    # Jenkins 설정/플러그인/잡 등을 저장할 공간
+    # 컨테이너 꺼져도 데이터 유지하도록 하기 위해서 씀
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    restart: unless-stopped
+
+volumes:
+  # Jenkins 전용 데이터 저장소
+  # 없으면 Jenkins 재시작할 때마다 초기화됨
+  jenkins_home:
